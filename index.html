@@ -9,44 +9,65 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-background: url('https://raw.githubusercontent.com/satyatorres/wedding-countdown/main/shiva-parvati-wedding-NI89_l.jpg') no-repeat center center fixed;
-            background-size: contain;
+            background: url('https://raw.githubusercontent.com/satyatorres/wedding-countdown/main/shiva-parvati-wedding-NI89_l.jpg') no-repeat center top fixed;
+            background-size: cover;
             color: #fff;
+            padding-top: 50px;
         }
         .countdown-box {
             background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 10px;
-            margin: 20px;
+            margin: 20px auto;
             display: inline-block;
         }
-        h1, h2 {
+        h1, h2, h3 {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            background: rgba(255, 255, 255, 0.3);
+            display: block;
+            padding: 10px 15px;
+            border-radius: 5px;
+            width: fit-content;
+            margin: 20px auto;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: yellow;
+        }
+        h2 {
+            font-size: 2.5rem;
+            font-style: italic;
+            color: #ffcc00;
+        }
+        h3 {
+            font-size: 2rem;
+            color: #ff9900;
         }
     </style>
 </head>
 <body>
-    <h1> OM NAMAHA SHIVAYA 🕉️🔱</h1>
-    <h1>🤵‍♂️💖 Welcome to   Satish & Akanksha's Wedding Week 🤵‍♂️👰‍♀️💖</h1>
-    <h2>Met on March 11 2024 - A Journey of Love! 💑🧿</h2>
+    <h1> ॐ नमः शिवाय 🕉️🔱</h1>
+    <h2>🤵‍♂️💖 Welcome to Satish & Akanksha's Wedding Week 🤵‍♂️👰‍♀️💖</h2>
+    <h3>Met on 11th March 2024 - The wait is over! 💑🧿</h3>
     <div class="countdown-box">
-        <h2>Engagement and Tilak - April 16</h2>
+        <h2>Engagement and Tilak - April 16 💍🎉</h2>
+        <div id="engagementCountdown"></div>
+    </div>
+    <div class="countdown-box">
+        <h2>Haldi - April 18 🌿💛</h2>
         <div id="haldiCountdown"></div>
     </div>
     <div class="countdown-box">
-        <h2>Haldi - April 18</h2>
+        <h2>Mehndi - April 19 🎨🌿</h2>
         <div id="mehndiCountdown"></div>
     </div>
     <div class="countdown-box">
-        <h2>Mehandi - April 19 🎉</h2>
+        <h2>Wedding - April 20 🎊❤️</h2>
         <div id="weddingCountdown"></div>
     </div>
     <div class="countdown-box">
-        <h2>Wedding - April 20 🎉</h2>
-        <div id="receptionCountdown"></div>
-    </div>
-    <div class="countdown-box">
-        <h2>Vidaai - April 23</h2>
+        <h2>Vidaai - April 23 😢💐</h2>
         <div id="vidaaiCountdown"></div>
     </div>
     
@@ -72,9 +93,9 @@ background: url('https://raw.githubusercontent.com/satyatorres/wedding-countdown
             updateCountdown();
         }
         
-        startCountdown("haldiCountdown", "April 18, 2025 00:00:00");
-        startCountdown("mehandiCountdown", "April 19, 2025 00:00:00");
         startCountdown("engagementCountdown", "April 16, 2025 00:00:00");
+        startCountdown("haldiCountdown", "April 18, 2025 00:00:00");
+        startCountdown("mehndiCountdown", "April 19, 2025 00:00:00");
         startCountdown("weddingCountdown", "April 20, 2025 00:00:00");
         startCountdown("vidaaiCountdown", "April 23, 2025 00:00:00");
     </script>
