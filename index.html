@@ -4,68 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Satish & Akanksha's Wedding Countdown 💑✨</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background: url('https://raw.githubusercontent.com/satyatorres/wedding-countdown/refs/heads/main/Shivaparvati_480x480.webp') no-repeat center center;
-            background-size: contain; /* Adjusted for your 480x480 image */
-            background-attachment: fixed;
-            color: black;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background: url('https://raw.githubusercontent.com/satyatorres/wedding-countdown/main/Shivaparvati_480x480.webp') no-repeat center center fixed;
+            background-size: contain;
+            color: #fff;
+        }
+        .countdown-box {
+            background: rgba(0, 0, 0, 0.7);
             padding: 20px;
-        }
-        h1, h2, #countdown {
-            font-size: 2.5rem;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 10px 20px;
             border-radius: 10px;
-            color: #333;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            max-width: 90%;
-            word-wrap: break-word;
+            margin: 20px;
+            display: inline-block;
         }
-        #countdown {
-            font-size: 2rem;
-            margin-top: 10px;
+        h1, h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
 <body>
-
     <h1> OM NAMAHA SHIVAYA 🕉️🔱</h1>
     <h1>🤵‍♂️💖 Satish & Akanksha's Engagement Countdown 🤵‍♂️👰‍♀️💖</h1>
     <h2>Met on March 11 2024 - A Journey of Love! 💑🧿</h2>
-    <div id="countdown"></div>
-
+    <div class="countdown-box">
+        <h2>Haldi - April 18</h2>
+        <div id="haldiCountdown"></div>
+    </div>
+    <div class="countdown-box">
+        <h2>Mehndi - April 19</h2>
+        <div id="mehndiCountdown"></div>
+    </div>
+    <div class="countdown-box">
+        <h2>Wedding Day - April 16 🎉</h2>
+        <div id="weddingCountdown"></div>
+    </div>
+    <div class="countdown-box">
+        <h2>Reception - April 20</h2>
+        <div id="receptionCountdown"></div>
+    </div>
+    <div class="countdown-box">
+        <h2>Vidaai - April 23</h2>
+        <div id="vidaaiCountdown"></div>
+    </div>
+    
     <script>
-        function updateCountdown() {
-            const weddingDate = new Date("April 16, 2025 00:00:00").getTime();
-            const now = new Date().getTime();
-            const timeLeft = weddingDate - now;
+        function startCountdown(id, eventDate) {
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const timeLeft = new Date(eventDate).getTime() - now;
 
-            if (timeLeft <= 0) {
-                document.getElementById("countdown").innerHTML = "🎉 It's Engagement Day! 🎉💃🕺";
-                return;
+                if (timeLeft <= 0) {
+                    document.getElementById(id).innerHTML = "🎉 Happening Today! 🎉";
+                    return;
+                }
+                
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                document.getElementById(id).innerHTML = `💍 ${days} Days, ⏳ ${hours} Hours, 🕰️ ${minutes} Minutes, ⏲️ ${seconds} Seconds Left! 🔥`;
             }
-
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML = 
-                `💍 ${days} Days, ⏳ ${hours} Hours, 🕰️ ${minutes} Minutes, ⏲️ ${seconds} Seconds Left! 🔥`;
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
         }
-
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+        
+        startCountdown("haldiCountdown", "April 18, 2025 00:00:00");
+        startCountdown("mehndiCountdown", "April 19, 2025 00:00:00");
+        startCountdown("weddingCountdown", "April 16, 2025 00:00:00");
+        startCountdown("receptionCountdown", "April 20, 2025 00:00:00");
+        startCountdown("vidaaiCountdown", "April 23, 2025 00:00:00");
     </script>
-
 </body>
 </html>
